@@ -1,7 +1,7 @@
 package vars
 
-// Sources combines individual sources together and acts
-// as if it is one Source, first source has higher precedence.
+// Sources combines individual sources together as if they
+// are one Source, first source has higher precedence.
 //
 // panic if any of the individual sources is nil.
 func Sources(many ...Source) Source {
