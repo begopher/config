@@ -1,0 +1,4 @@
+# datbase  
+username=    gopher
+database = localhost
+port    =1234
