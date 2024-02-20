@@ -1,7 +1,7 @@
-package vars
+package config
 
-// Map reads value from given map.
-func Map(source map[string]string) Source {
+// Map as source of setting.
+func Map(source map[string]string) Setting {
 	if source == nil {
 		source = make(map[string]string)
 	}

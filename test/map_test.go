@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/begopher/vars"
+	"github.com/begopher/config"
 	"testing"
 )
 
@@ -11,9 +11,9 @@ func Test_Map(t *testing.T) {
 		"database": "localhost",
 		"port":     "1234",
 	}
-	source := vars.Map(data)
+	setting := config.Map(data)
 	for key, expected := range data {
-		if got := source.Get(key); got != expected {
+		if got := setting.Get(key); got != expected {
 			t.Errorf("%v=%s expected value is (%s)", key, got, expected)
 		}
 	}

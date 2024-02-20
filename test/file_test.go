@@ -1,13 +1,13 @@
 package test
 
 import (
-	"github.com/begopher/vars"
+	"github.com/begopher/config"
 	"testing"
 )
 
 func Test_File(t *testing.T) {
 	file := "vars.txt"
-	source, err := vars.File(file)
+	setting, err := config.File(file)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -17,7 +17,7 @@ func Test_File(t *testing.T) {
 		"port":     "1234",
 	}
 	for key, expected := range data {
-		if got := source.Get(key); got != expected {
+		if got := setting.Get(key); got != expected {
 			t.Errorf("%v=%s expected value is (%s)", key, got, expected)
 		}
 	}

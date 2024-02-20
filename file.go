@@ -1,4 +1,4 @@
-package vars
+package config
 
 import (
 	"bufio"
@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// File is parsed with the following rules:
+// File as source of setting, parsing rules:
 //  - empty lines are ignored.
 //  - lines start with # are ignored (comments).
 //  - lines start with = are ignored (no key).
@@ -14,7 +14,7 @@ import (
 //  - the first equal symbol (=) in a line acts as a delimiter for key and value pair.
 //  - last identical key override previous value.
 //  - key is associated with empty string if value is omitted.
-func File(path string) (Source, error) {
+func File(path string) (Setting, error) {
 	file, err := os.Open(path)
 	if err != nil {
 		return nil, err

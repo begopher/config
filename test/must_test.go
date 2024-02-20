@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/begopher/vars"
+	"github.com/begopher/config"
 	"testing"
 )
 
@@ -13,11 +13,9 @@ func Test_Must(t *testing.T) {
 		"port":     "2222",
 		"database": "localhost",
 	}
-	source := vars.Sources(
-		vars.Map(data1),
-		vars.Map(data2))
+	setting := config.Settings(config.Map(data1), config.Map(data2))
 
-	exist, missing := vars.Check(source,
+	exist, missing := config.Check(setting,
 		"username",
 		"port",
 		"database",

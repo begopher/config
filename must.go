@@ -1,11 +1,11 @@
-package vars
+package config
 
-func Check(source Source, keys ...string) (exist, missing []string) {
-	if source == nil {
-		panic("vars.Must: source cannot be nil")
+func Check(setting Setting, keys ...string) (exist, missing []string) {
+	if setting == nil {
+		panic("config.Check: setting cannot be nil")
 	}
 	for _, key := range keys {
-		if value := source.Get(key); value == "" {
+		if value := setting.Get(key); value == "" {
 			missing = append(missing, key)
 			continue
 		}

@@ -1,10 +1,10 @@
-package vars
+package config
 
 import (
 	"os"
 )
-// Environment reads value from environment variables 
-func Environment() Source {
+// Environment variables as source of setting
+func Environment() Setting {
 	return environment{}
 }
 

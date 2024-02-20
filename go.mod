@@ -1,3 +1,3 @@
-module github.com/begopher/vars
+module github.com/begopher/config
 
 go 1.20

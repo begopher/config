@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/begopher/vars"
+	"github.com/begopher/config"
 	"os"
 	"testing"
 )
@@ -18,9 +18,9 @@ func Test_Enviorment(t *testing.T) {
 		}
 		defer os.Unsetenv(key)
 	}
-	source := vars.Environment()
+	setting := config.Environment()
 	for key, expected := range data {
-		if got := source.Get(key); got != expected {
+		if got := setting.Get(key); got != expected {
 			t.Errorf("%v=%s expected value is (%s)", key, got, expected)
 		}
 	}
